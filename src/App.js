@@ -16,9 +16,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <p data-test-id="code_test">
          <code>Mark says hi</code> 
         </p>
+        <div >{data || 'not available' }</div>
+        <button>Button to do all the things</button> 
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -28,7 +30,6 @@ function App() {
           Learn React
         </a>
       </header>
-      <div>{data}</div>
     </div>
   );
 }

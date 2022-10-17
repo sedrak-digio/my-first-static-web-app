@@ -1,0 +1,30 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "outputDocument",
+      "databaseName": "azure-core-compare-mongo",
+      "collectionName": "newdbforfuncbinding",
+      "createIfNotExists": true,
+      "connectionStringSetting": "azurecorecomparemongo_DOCUMENTDB",
+      "partitionKey": "id",
+      "collectionThroughput": "undefined"
+    }
+  ]
+}

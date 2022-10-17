@@ -14,6 +14,17 @@
       "type": "http",
       "direction": "out",
       "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "outputDocument",
+      "databaseName": "outDatabase",
+      "collectionName": "MyCollection",
+      "createIfNotExists": false,
+      "connectionStringSetting": "azurecorecomparemongo_DOCUMENTDB",
+      "partitionKey": "undefined",
+      "collectionThroughput": "undefined"
     }
   ]
 }

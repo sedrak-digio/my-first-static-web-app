@@ -11,6 +11,6 @@ module.exports = async function (context, req) {
     //     body: responseMessage
     // };
     context.res.json({
-        text: "Mark says hi from the API"
+        text: "Mark says hi from the API Updated"
     });
 }

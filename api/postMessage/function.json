@@ -21,7 +21,7 @@
       "name": "outputDocument",
       "databaseName": "outDatabase",
       "collectionName": "MyCollection",
-      "createIfNotExists": false,
+      "createIfNotExists": true,
       "connectionStringSetting": "azurecorecomparemongo_DOCUMENTDB",
       "partitionKey": "undefined",
       "collectionThroughput": "undefined"

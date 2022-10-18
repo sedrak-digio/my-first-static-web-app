@@ -37,7 +37,8 @@ module.exports = async function (context, req) {
         })
 
         reponses.push("bane name: "+ bane);
-        reponses.push(JSON.stringify(req));
+        reponses.push(req);
+        reponses.push(context);
         reponses.push("did the db insert!");
         reponses.push(JSON.stringify(response));
     }

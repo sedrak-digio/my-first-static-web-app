@@ -47,18 +47,18 @@ module.exports = async function (context, req) {
 
 async function getDbClient() {
     const cosmosClient = new CosmosClient({
-        endpoint: process.env.COSMOS_ENDPOINT,
-        key: process.env.COSMOS_KEY,
+        endpoint: process.env.COSMOS_ENDPOINT || endpoint,
+        key: process.env.COSMOS_KEY || key,
     })
     const database = (
-        await this.cosmosClient.databases.createIfNotExists({
-            id: process.env.COSMOS_ENV, //TODO:: This should be eventually a variable based on the environment.
+        await cosmosClient.databases.createIfNotExists({
+            id: process.env.COSMOS_ENV || databaseId , //TODO:: This should be eventually a variable based on the environment.
         })
     ).database
 
     const container = (
-        await this.database.containers.createIfNotExists({
-            id: tableName,
+        await database.containers.createIfNotExists({
+            id: containerId,
         })
     ).container
 

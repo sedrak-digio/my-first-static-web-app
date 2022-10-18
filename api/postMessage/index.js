@@ -1,4 +1,4 @@
-const CosmosClient = require('@azure/cosmos').CosmosClient
+const { CosmosClient } = require('@azure/cosmos')
 
 const config = require('./config')
 const url = require('url')
@@ -22,7 +22,8 @@ module.exports = async function (context, req) {
         context.bindings.outputDocument = JSON.stringify({
             // create a random ID
             id: new Date().toISOString() + Math.random().toString().substring(2, 10),
-            name: name
+            name: name,
+            partitionKey: 'baneRange' 
         });
     }
 
@@ -36,13 +37,15 @@ module.exports = async function (context, req) {
         })
 
         reponses.push("bane name: "+ bane);
+        reponses.push(JSON.stringify(req));
         reponses.push("did the db insert!");
-        reponses.push(response);
+        reponses.push(JSON.stringify(response));
     }
 
     context.res = {
         // status: 200, /* Defaults to 200 */
-        body: reponses.join(" ### ")
+        contentType: 'application/json',
+        body: reponses//reponses.join(" ### ")
     };
 }
 

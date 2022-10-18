@@ -1,7 +1,7 @@
 var config = {}
 
 config.endpoint = 'https://azure-core-compare-mongo.documents.azure.com:443/'
-config.key = '0dksNDFy61MNZlaeOo2x7w8MHD7PPLqg2ASn4d9usQRmoDmxqIfaB3haTdZnTG8oBjRyBsuPyvIZGIDKsOlKnw=='
+// config.key = 
 
 config.database = {
   id: 'ToDoList'

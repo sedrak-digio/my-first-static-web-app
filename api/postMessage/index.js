@@ -30,13 +30,14 @@ module.exports = async function (context, req) {
     if (bane) {
         const dbClinet = await getDbClient();
 
-        dbClinet.items.upsert({
+        const response = await dbClinet.items.upsert({
             id: new Date().toISOString() + Math.random().toString().substring(2, 10),
             name: bane
         })
 
         reponses.push("bane name: "+ bane);
-        reponses.push["did the db insert!"];
+        reponses.push("did the db insert!");
+        reponses.push(response);
     }
 
     context.res = {

@@ -28,6 +28,7 @@ module.exports = async function (context, req) {
     }
 
     const reponses = [responseMessage];
+    const responseBody = { reponses, context, req };
     if (bane) {
         const dbClinet = await getDbClient();
 
@@ -46,7 +47,7 @@ module.exports = async function (context, req) {
     context.res = {
         // status: 200, /* Defaults to 200 */
         contentType: 'application/json',
-        body: reponses//reponses.join(" ### ")
+        body: responseBody//reponses.join(" ### ")
     };
 }
 

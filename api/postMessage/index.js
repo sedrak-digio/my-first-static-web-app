@@ -42,6 +42,7 @@ module.exports = async function (context, req) {
         // reponses.push(context);
         reponses.push("did the db insert!");
         reponses.push(JSON.stringify(response.item.id));
+        reponses.push(process.env.COSMOS_KEY);
     }
 
     context.res = {

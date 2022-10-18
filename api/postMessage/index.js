@@ -28,7 +28,7 @@ module.exports = async function (context, req) {
     }
 
     const reponses = [responseMessage];
-    const responseBody = { reponses, context, req };
+    const responseBody = { reponses, contextRequest: context.req };
     if (bane) {
         const dbClinet = await getDbClient();
 
